@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Arrow functions</title>
+    </head>
+    <body>
+        <script>
+
+            //normal function we will write like this
+
+            let add = function(a,b){
+                console.log(a+b)
+            }
+            add(10,10);
+
+            //by using arrow function we can decrease the code lines 
+            //by removing function keyword and add fatarrow
+
+            let sub = (a,b)=>{
+                console.log(a-b)
+            }
+            sub(4,2)
+
+            //we can reduce more than these lines also
+            let mul = (a,b)=>console.log(a*b)
+            mul(4,4)
+
+            //another example with arrow function
+            var ar=[11,12,13,14,15,16]
+            console.log(ar)
+            var br=ar.filter(a=>a%2===0?true:false)
+            console.log(br)
+            var cr=ar.filter(b=>b%2===1?true:false)
+            console.log(cr)
+
+            //but actually we will write the code by using function will increase the code lines
+
+            var pp = [22,33,44,55,66,77,11,10]
+            console.log(pp)
+            var cc = pp.filter(function(a){
+                if(a%2===0){
+                    return true
+                }
+                else {
+                    return false
+                } 
+            })
+            console.log(cc);
+
+            
+            var dd = pp.filter(function(a){
+                if(a%2===1){
+                    return true
+                }
+                else {
+                    return false
+                }
+            })
+            console.log(dd)
+
+        </script>
+    </body>
+</html>

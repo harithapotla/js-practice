@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <title>Var-Let-Const-Freeze-Seal</title>
+    </head>
+    <body>
+        <script>
+            var a=100;
+            var a=200;
+            console.log(a);
+
+           // here var is not going to declare the previous variable. it just over write the previous value
+           //But let wont allow us to use the same variable if we use it before. it will show syntaxerror like (the variable is already declared)
+            
+           let x=150;
+            console.log(x)
+
+            //let x=200;
+           // console.log(x)
+           //but let will create the block scope
+           //like we can declare the function expression by using let then we can redeclare the variable it will allow
+           //it wont throw error
+
+           let add = function(a,b){
+            console.log(a+b)
+           }
+           add(10,5);
+
+           add = function(a,b){
+            console.log(a+b)
+           }
+           add(5,5)
+           
+           //coming to const it even wont allow the function variables also to redeclare it throw type error
+
+           const sub = function(a,b){
+            console.log(a-b)
+           }
+           sub(10,5)
+
+           //sub = function(a,b){
+           // console.log(a-b)
+           //}
+           //sub(6,3)
+
+           //in const we can mutatable the values inside the array and object 
+           //in arr we can mutate by using the index value
+           //in obj we can mutate by using the property
+
+           const ar=[2,4,6,8,10]
+           console.log(ar)
+           //here we can reassign the value of index 2 by using
+           ar[2]=16
+           console.log(ar)
+           //we can add anothe value also by using index
+           ar[5]=12
+           console.log(ar)
+
+           //same with object also
+           const obj = {
+            firstname:'Haritha',
+            age:28
+           }
+           console.log(obj);
+
+           //we can modify athe content in the object by using obj.property
+           obj.firstname = 'Ravi Venkatesh'
+           obj.age = 33;
+           console.log(obj)
+
+           //we can add the new property in the object also by using const
+           obj.lastname = 'Myneni'
+           obj.location = 'Hyderabad'
+           console.log(obj);
+
+           //we cant add new value and we cant change the content in the object also by using Object.freeze()
+           var abc = {
+            firstname:'Haritha',
+            lastname:'Potla'
+           }
+           console.log(abc)
+           Object.freeze(abc)
+           abc.lastname = 'Chowdary'
+           console.log(abc)
+
+           //we can change the content in the object but we cant able add a new property by using Object.seal()
+           var bcd = {
+            firstname:'Srilekha',
+            lastname:'Potla'
+           }
+           console.log(bcd)
+           bcd.lastname = 'Chowdary'
+           Object.seal(bcd)
+           console.log(bcd)
+           </script>
+    </body>
+</html>
