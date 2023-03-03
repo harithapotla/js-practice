@@ -1,0 +1,56 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            var fruits = ["apple","bannana"]
+            fruits.push("carrot");
+            console.log(fruits)
+            console.log(fruits.slice(0,1))
+            console.log(fruits)
+            console.log(fruits.pop())
+            console.log(fruits.push())
+            fruits.push('Kiwi')
+            console.log(fruits)
+            fruits.push('carrot')
+            console.log(fruits)
+            console.log(fruits.slice(0,2))
+            
+            var months=['jan','mar','apr','may']
+            console.log(months)
+            months.splice(1,0,'feb');
+            console.log(months)
+            months.splice(5,0,'june')
+            console.log(months)
+            console.log(months.indexOf('mar'))
+
+
+            function isPalindrome(text){
+                return text===(text.split('').reverse().join(''))
+            }
+            console.log(isPalindrome("madam"))
+            console.log(isPalindrome('level'))
+            console.log(isPalindrome('watsnew'))
+
+            function isText(palindrome){
+                return palindrome===(palindrome.split('').reverse().join(''))
+            }
+            console.log(isText("nitin"))
+            console.log(isText('boolean'))
+
+            //spread operator
+            var a = [1,2,3]
+            var b = [5,6,7]
+            var c = [...a,...b]
+            console.log(c)
+
+            //concat
+            var d = a.concat(b)
+            console.log(`concat of array ${d}`)
+
+            //mul of 5
+            
+        </script>
+    </body>
+</html>
